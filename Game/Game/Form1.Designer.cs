@@ -33,6 +33,7 @@
             Exit = new Button();
             Fon = new PictureBox();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            Text_Schujet = new Label();
             ((System.ComponentModel.ISupportInitialize)Fon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             SuspendLayout();
@@ -74,17 +75,30 @@
             // axWindowsMediaPlayer1
             // 
             axWindowsMediaPlayer1.Enabled = true;
-            axWindowsMediaPlayer1.Location = new Point(852, 722);
+            axWindowsMediaPlayer1.Location = new Point(8, 8);
             axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
             axWindowsMediaPlayer1.Size = new Size(75, 23);
             axWindowsMediaPlayer1.TabIndex = 3;
+            axWindowsMediaPlayer1.Visible = false;
+            // 
+            // Text_Schujet
+            // 
+            Text_Schujet.AutoSize = true;
+            Text_Schujet.Font = new Font("Showcard Gothic", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Text_Schujet.Location = new Point(821, 801);
+            Text_Schujet.Name = "Text_Schujet";
+            Text_Schujet.Size = new Size(246, 79);
+            Text_Schujet.TabIndex = 4;
+            Text_Schujet.Text = "label1";
+            Text_Schujet.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1904, 1041);
+            Controls.Add(Text_Schujet);
             Controls.Add(axWindowsMediaPlayer1);
             Controls.Add(Exit);
             Controls.Add(Play);
@@ -95,6 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)Fon).EndInit();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -103,5 +118,6 @@
         private Button Exit;
         private PictureBox Fon;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private Label Text_Schujet;
     }
 }
