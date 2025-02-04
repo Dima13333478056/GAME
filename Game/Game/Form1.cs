@@ -13,7 +13,8 @@ namespace Game
         public Form1()
         {
             InitializeComponent();
-            axWindowsMediaPlayer1.PlayStateChange += axWindowsMediaPlayer1_PlayStateChange;
+            video.Size = new Size(1920, 1080);
+            video.Location = new Point(0, 0);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -21,12 +22,8 @@ namespace Game
             try
             {
                 string backgroundImagePath = Path.Combine(Application.StartupPath, "Фоны", "Fon_StartGame.jpg");
-                if (!File.Exists(backgroundImagePath))
-                {
-                    MessageBox.Show("Фоновое изображение не найдено!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
+                Fon.Size = new Size(1920, 1080);
+                Fon.Location = new Point(0, 0);
                 Fon.BackgroundImage = Image.FromFile(backgroundImagePath);
                 Fon.BackgroundImageLayout = ImageLayout.Stretch;
                 this.WindowState = FormWindowState.Maximized;
@@ -41,17 +38,11 @@ namespace Game
         {
             Exit.Location = new Point(1720, 0);
             Play.Visible = false;
-            videoPath = Path.Combine(Application.StartupPath, "Сцены", "Scene_DayOne.mp4");
-            Video_Start(); // Добавлен вызов метода Video_Start для начала воспроизведения видео
-        }
-
-        private void Video_Start()
-        {
-            axWindowsMediaPlayer1.URL = videoPath;
-            axWindowsMediaPlayer1.Location = new Point(0, 0);
-            axWindowsMediaPlayer1.Size = new Size(1920, 1080);
-            axWindowsMediaPlayer1.Ctlcontrols.play();
-            axWindowsMediaPlayer1.Visible = true;
+            video.Visible = true;
+            videoPath = Path.Combine(Application.StartupPath, "Сцены", "Scene_one.mp4");
+            video.URL = videoPath; // Указать путь к видео
+            video.Ctlcontrols.play(); //
+            Text_Schujet.Visible = true;
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -59,20 +50,11 @@ namespace Game
             this.Close();
         }
 
-        private void Day_one()
+        private void Text_Schujet_Click(object sender, EventArgs e)
         {
-            videoPath = Path.Combine(Application.StartupPath, "Сцены", "One.MOV");
-            Video_Start(); // Добавлен вызов метода Video_Start для начала воспроизведения видео
-        }
-
-        private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
-        {
-            if (e.newState == (int)WMPLib.WMPPlayState.wmppsMediaEnded)
-            {
-                // Видео завершено, переходим к Дню 1
-                axWindowsMediaPlayer1.Visible = false;
-            }
-            Day_one();
+            videoPath = Path.Combine(Application.StartupPath, "Сцены", "Scene_two.mp4");
+            video.URL = videoPath; // Указать путь к видео
+            video.Ctlcontrols.play(); // Запустить 
         }
     }
 }
