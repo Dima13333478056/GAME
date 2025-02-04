@@ -9,7 +9,7 @@ namespace Game
     public partial class Form1 : Form
     {
         private string videoPath = string.Empty;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -40,21 +40,58 @@ namespace Game
             Play.Visible = false;
             video.Visible = true;
             videoPath = Path.Combine(Application.StartupPath, "Сцены", "Scene_one.mp4");
-            video.URL = videoPath; // Указать путь к видео
-            video.Ctlcontrols.play(); //
+            video.URL = videoPath;
+            video.Ctlcontrols.play();
+            Text_Schujet.Text = "Лечь поспать еще";
+            Text_2.Text = "Начать собираться на учебу";
             Text_Schujet.Visible = true;
+            Text_2.Visible = true;
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        private int progress = 0;
         private void Text_Schujet_Click(object sender, EventArgs e)
         {
-            videoPath = Path.Combine(Application.StartupPath, "Сцены", "Scene_two.mp4");
-            video.URL = videoPath; // Указать путь к видео
-            video.Ctlcontrols.play(); // Запустить 
+            switch (progress)
+            {
+                case 0:
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "лечь спать.mp4");
+                    video.URL = videoPath;
+                    video.Ctlcontrols.play();
+                    progress++;
+                    break;
+                case 1:
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "шутка.mp4");
+                    video.URL = videoPath;
+                    video.Ctlcontrols.play();
+                    break;
+                
+            }
+
+        }
+        private int progress_2 = 0;
+        private void Text_2_Click(object sender, EventArgs e)
+        {
+            switch (progress_2)
+            {
+                case 0:
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "label_1.mp4");
+                    video.URL = videoPath;
+                    video.Ctlcontrols.play();
+                    Text_Schujet.Text = "Пошутить";
+                    Text_2.Text = "Сказать правду";
+                    progress++;
+                    break;
+                case 1:
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "правда.mp4");
+                    video.URL = videoPath;
+                    video.Ctlcontrols.play();
+                    break;
+            }
+
         }
     }
 }
