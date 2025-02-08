@@ -78,7 +78,7 @@
             Text_Schujet.AutoSize = true;
             Text_Schujet.BackColor = Color.Transparent;
             Text_Schujet.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Text_Schujet.Location = new Point(312, 725);
+            Text_Schujet.Location = new Point(315, 785);
             Text_Schujet.Name = "Text_Schujet";
             Text_Schujet.Size = new Size(144, 46);
             Text_Schujet.TabIndex = 4;
@@ -99,7 +99,7 @@
             Text_2.AutoSize = true;
             Text_2.BackColor = Color.Transparent;
             Text_2.Font = new Font("Showcard Gothic", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Text_2.Location = new Point(1009, 725);
+            Text_2.Location = new Point(1274, 785);
             Text_2.Name = "Text_2";
             Text_2.Size = new Size(136, 44);
             Text_2.TabIndex = 6;
