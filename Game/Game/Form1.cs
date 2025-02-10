@@ -63,18 +63,20 @@ namespace Game
                     Video_play();
                     break;
                 case "Пошутить":
-                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "шутка.mp4");
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "шутка (2).mp4");
                     Video_play();
-                    break;
-                case "дорога":
-                    Doroga();
+                    Text_Schujet.Text = "Пойти на пары";
+                    Text_2.Text = "Прогулять";
                     break;
                 case "Пойти на пары":
-                    //videoPath = Path.Combine(Application.StartupPath, "Сцены", "Пойти на пары.mp4");
-                    //Video_play();
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "на пары.mp4");
+                    Video_play();
+                    Text_Schujet.Text = "Сказать что не знаю ответа";
+                    Text_2.Text = "Инкапсуляция Наследование Полиморфизм";
                     break;
-                case "":
-
+                case "Сказать что не знаю ответа":
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", ".mp4");
+                    Video_play();
                     break;
             }
 
@@ -94,19 +96,18 @@ namespace Game
                     break;
 
                 case "Сказать правду":
-                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "правда.mp4");
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "правда (2).mp4");
                     Video_play();
+                    Text_Schujet.Text = "Пойти на пары";
+                    Text_2.Text = "Прогулять";
                     break;
-
-                case "дорога":
-                    Doroga();
-                    break;
-
                 case "Прогулять":
-                    // videoPath = Path.Combine(Application.StartupPath, "Сцены", "Прогулять.mp4");
-                    // Video_play();
+                    //videoPath = Path.Combine(Application.StartupPath, "Сцены", ".mp4");
+                    //Video_play();
                     break;
-                case "":
+                case "Инкапсуляция Наследование Полиморфизм":
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", ".mp4");
+                    Video_play();
 
                     break;
             }

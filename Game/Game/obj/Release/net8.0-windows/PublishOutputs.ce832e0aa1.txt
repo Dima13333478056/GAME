@@ -1,0 +1,7 @@
+C:\Users\redmi\Desktop\Новая папка\GAME\Game\Game\bin\Release\net8.0-windows\app.publish\Game.exe
+C:\Users\redmi\Desktop\Новая папка\GAME\Game\Game\bin\Release\net8.0-windows\app.publish\Game.dll
+C:\Users\redmi\Desktop\Новая папка\GAME\Game\Game\bin\Release\net8.0-windows\app.publish\Game.deps.json
+C:\Users\redmi\Desktop\Новая папка\GAME\Game\Game\bin\Release\net8.0-windows\app.publish\Game.runtimeconfig.json
+C:\Users\redmi\Desktop\Новая папка\GAME\Game\Game\bin\Release\net8.0-windows\app.publish\Game.pdb
+C:\Users\redmi\Desktop\Новая папка\GAME\Game\Game\bin\Release\net8.0-windows\app.publish\Interop.WMPLib.dll
+C:\Users\redmi\Desktop\Новая папка\GAME\Game\Game\bin\Release\net8.0-windows\app.publish\AxInterop.WMPLib.dll
