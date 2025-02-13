@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Play = new Button();
             Exit = new Button();
@@ -35,6 +36,7 @@
             Text_Schujet = new Label();
             Fon = new PictureBox();
             Text_2 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)video).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Fon).BeginInit();
             SuspendLayout();
@@ -107,6 +109,10 @@
             Text_2.Visible = false;
             Text_2.Click += Text_2_Click;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -135,5 +141,6 @@
         private Label Text_Schujet;
         private PictureBox Fon;
         private Label Text_2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -13,6 +13,7 @@ namespace Game
 
         public Form1()
         {
+            
             InitializeComponent();
             video.Size = new Size(1920, 1080);
             video.Location = new Point(0, 0);
@@ -59,8 +60,9 @@ namespace Game
             switch (user_input)
             {
                 case "Лечь поспать еще":
-                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "лечь спать.mp4");
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "лечь спать.MOV");
                     Video_play();
+                    Wasted();
                     break;
                 case "Пошутить":
                     videoPath = Path.Combine(Application.StartupPath, "Сцены", "шутка (2).mp4");
@@ -75,13 +77,18 @@ namespace Game
                     Text_2.Text = "Инкапсуляция Наследование Полиморфизм";
                     break;
                 case "Сказать что не знаю ответа":
-                    videoPath = Path.Combine(Application.StartupPath, "Сцены", ".mp4");
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "не знаю.MOV");
                     Video_play();
+                    Wasted();
                     break;
             }
 
         }
-
+        private void Wasted()
+        {
+            timer1.Interval = 10000;
+            timer1.Start();
+        }
         private void Text_2_Click(object sender, EventArgs e)
         {
             user_input = Text_2.Text;
@@ -102,22 +109,15 @@ namespace Game
                     Text_2.Text = "Прогулять";
                     break;
                 case "Прогулять":
-                    //videoPath = Path.Combine(Application.StartupPath, "Сцены", ".mp4");
-                    //Video_play();
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "Прогулять.mp4");
+                    Video_play();
+                    Wasted();
                     break;
                 case "Инкапсуляция Наследование Полиморфизм":
-                    videoPath = Path.Combine(Application.StartupPath, "Сцены", ".mp4");
+                    videoPath = Path.Combine(Application.StartupPath, "Сцены", "правильно.MOV");
                     Video_play();
-
                     break;
             }
-        }
-        private void Doroga()
-        {
-            videoPath = Path.Combine(Application.StartupPath, "Сцены", "Дорога на учебу.mp4");
-            Video_play();
-            Text_Schujet.Text = "Пойти на пары";
-            Text_2.Text = "Прогулять";
         }
         private void Video_play()
         {
@@ -125,6 +125,12 @@ namespace Game
             video.Location = new Point(0, 0);
             video.URL = videoPath;
             video.Ctlcontrols.play();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Вы проиграли!");
+            this.Close();
         }
     }
 }
